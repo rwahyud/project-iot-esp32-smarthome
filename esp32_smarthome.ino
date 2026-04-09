@@ -3,6 +3,13 @@
 #include <BlynkSimpleEsp32.h>
 #include <DHT.h>
 
+#if __has_include("secrets.h")
+#include "secrets.h"
+#else
+#define BLYNK_AUTH_TOKEN "ISI_TOKEN_KAMU"
+#warning "Buat file secrets.h agar token Blynk tidak disimpan di repository"
+#endif
+
 #define DHTPIN 4
 #define DHTTYPE DHT11
 #define LDR_PIN 34

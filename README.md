@@ -42,7 +42,10 @@ Install library berikut dari Library Manager:
 
 ## Konfigurasi Blynk
 
-Tambahkan Auth Token Blynk di sketch sebelum upload, misalnya:
+Project ini membaca token dari file lokal `secrets.h` (file ini tidak dipush ke GitHub).
+
+1. Salin `secrets.example.h` menjadi `secrets.h`
+2. Isi token kamu di `secrets.h`
 
 ```cpp
 #define BLYNK_AUTH_TOKEN "ISI_TOKEN_KAMU"
@@ -64,7 +67,7 @@ Virtual pin yang dipakai:
 2. Pilih board ESP32 yang sesuai.
 3. Pilih COM port.
 4. Pastikan semua library sudah terpasang.
-5. Isi `BLYNK_AUTH_TOKEN`.
+5. Pastikan file `secrets.h` sudah dibuat dan berisi token.
 6. Upload sketch.
 7. Saat pertama kali menyala, ESP32 akan membuat portal `SmartHome-Setup` (WiFiManager) untuk konfigurasi WiFi.
 
